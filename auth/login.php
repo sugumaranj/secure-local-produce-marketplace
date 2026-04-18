@@ -22,8 +22,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["name"] = $user["name"];
             $_SESSION["role"] = $user["role"];
+            $_SESSION["last_activity"] = time();
 
             echo "Login successful";
+            if($_SESSION["role"]=="buyer"){
+                session_regenerate_id(true);
+                header("Location:../buyer/home.php");
+                exit();
+            }
+            else if($_SESSION["role"]=="seller"){
+                session_regenerate_id(true);
+                header("Location:../seller/dashboard.php");
+                exit();
+            }
         }else{
             echo "Invalid password or username";
         }
