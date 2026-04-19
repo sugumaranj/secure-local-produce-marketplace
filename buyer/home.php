@@ -12,12 +12,16 @@ if(time()-$_SESSION["last_activity"]>600){
 }
 if($_SESSION["role"]=="buyer"){
     $_SESSION["last_activity"]=time();
-    echo "Welcome " . $_SESSION["name"];
-    echo "<a href='../auth/logout.php'>Logout</a>";
-
 }else{
     header("Location:../public/login.html");
     exit();
 }
 
 ?>
+
+<?php include("../includes/header.php");?>
+<div class="container">
+    <h3>Buyer Home</h3>
+</div>
+
+<?php include("../includes/footer.php");?>

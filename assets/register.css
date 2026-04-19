@@ -1,0 +1,124 @@
+/* Import a clean, modern font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* --- Global & Background --- */
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #f4f9f4; /* Light, fresh greenery tint */
+  background-image: radial-gradient(
+    #d1e2c4 1px,
+    transparent 1px
+  ); /* Subtle dot pattern */
+  background-size: 24px 24px;
+  color: #2c3e2d; /* Dark earthy green text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  color: #1e5631; /* Deep forest green */
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* --- Form Container --- */
+form {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(46, 125, 50, 0.08); /* Soft green-tinted shadow */
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
+  border-top: 6px solid #4caf50; /* Fresh leaf green accent line */
+}
+
+/* Hide the <br> tags in the HTML to use modern CSS spacing instead */
+form br {
+  display: none;
+}
+
+/* --- Input Fields & Select --- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1.5px solid #d1e2c4; /* Light sage border */
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: #fafdfa;
+  color: #2c3e2d;
+  transition: all 0.3s ease;
+}
+
+/* Custom Placeholder Color */
+input::placeholder {
+  color: #9ab593;
+}
+
+/* Focus States for Inputs */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15); /* Green glow */
+  background-color: #ffffff;
+}
+
+/* Custom Dropdown Styling */
+select {
+  appearance: none; /* Removes default browser styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234caf50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  color: #4a5d4e;
+  cursor: pointer;
+}
+
+/* --- Submit Button --- */
+button[type="submit"] {
+  width: 100%;
+  background-color: #4caf50; /* Primary Agri Green */
+  color: #ffffff;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+  font-family: inherit;
+  margin-top: 8px;
+}
+
+/* Button Hover & Active States */
+button[type="submit"]:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+button[type="submit"]:active {
+  transform: translateY(2px); /* Click effect */
+}
