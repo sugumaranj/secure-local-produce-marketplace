@@ -22,7 +22,8 @@ if($_SESSION["role"]=="seller"){
 <?php include("../includes/header.php");?>
 <div class="nav-menu">
     <a href="#">Dashboard</a>
-    <a href="#">My Products</a>
+    <a href="./add_product.php">Add Product</a>
+    <a href="./view_products.php">My Products</a>
     <a href="#">Orders</a>
 </div>
 
