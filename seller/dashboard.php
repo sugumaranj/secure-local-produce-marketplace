@@ -20,6 +20,7 @@ if($_SESSION["role"]=="seller"){
 ?>
 
 <?php include("../includes/header.php");?>
+<?php include("../config/db.php");?>
 <div class="nav-menu">
     <a href="#">Dashboard</a>
     <a href="./add_product.php">Add Product</a>
@@ -31,7 +32,17 @@ if($_SESSION["role"]=="seller"){
     <h3>Seller Dashboard</h3>
 
     <div class="cards">
-        <div class="card">Total Products</div>
+        <div class="card">Total Products
+            <?php
+                $stmt = $conn -> prepare("SELECT COUNT(*) AS total FROM products WHERE seller_id=?");
+                $stmt->bind_param("i",$_SESSION["user_id"]);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                $totalProducts = $row["total"];
+                echo " : $totalProducts";
+            ?>
+        </div>
         <div class="card">Orders</div>
         <div class="card">Revenue</div>
     </div>

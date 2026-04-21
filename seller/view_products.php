@@ -20,7 +20,7 @@ include("../includes/header.php");
 include("../config/db.php");
 
 $sellerID = $_SESSION["user_id"];
-$stmt = $conn->prepare("SELECT * FROM products WHERE seller_id =? ORDER BY created_at");
+$stmt = $conn->prepare("SELECT * FROM products WHERE seller_id =? ORDER BY created_at DESC");
 $stmt->bind_param("i",$sellerID);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -44,6 +44,14 @@ if( $result->num_rows > 0 ){
         echo "<div class='image'>";
         echo "<img src='$productImagePath' class='insideContainer'/>";
         echo "</div>";
+        echo "<div class='delete'>";
+        echo "<a href='delete_product.php?id=" . $row["id"] . "' onclick=\"return confirm('Are you sure you want to delete this product?')\">Delete</a>";
+        echo "</div>";
+        echo "<div class='editProduct'>";
+        echo "<a href='edit_product.php?id=" . $row["id"] . "'>Edit</a>";
+        echo "</div>";
+
+
         echo "</div>";
     }
 } 
