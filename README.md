@@ -1,147 +1,89 @@
+---
+
 # 🌱 Secure Local Produce Marketplace
 
-A full-stack web application that connects local farmers/sellers with buyers to trade fresh produce securely.
+A web application connecting local farmers (sellers) with buyers to trade fresh produce securely.
 
 ---
 
-## 🚀 Project Overview
-
-This platform allows:
-
-* Sellers to list and manage their agricultural products
-* Buyers to browse and purchase local produce
-* Secure authentication and role-based access control
-
-Built as a **real-world project** focusing on backend security and scalable design.
-
----
-
-## 🛠 Tech Stack
+## 🚀 Tech Stack
 
 * **Frontend:** HTML, CSS
-* **Backend:** PHP (Core PHP)
+* **Backend:** PHP
 * **Database:** MySQL
 * **Server:** Apache (XAMPP/WAMP)
 
 ---
 
-## 🔐 Key Features
+## 🔐 Features
 
-### ✅ Authentication System
-
-* Secure user registration
-* Password hashing using `password_hash()`
-* Login verification using `password_verify()`
-
-### ✅ Authorization (Role-Based Access)
-
-* Separate roles: Buyer & Seller
-* Role-based redirection after login
-* Protected routes to prevent unauthorized access
-
-### ✅ Session Management
-
-* Session-based authentication
-* Secure login persistence
-* Proper session destruction on logout
-
-### ✅ Security Practices Implemented
-
-* SQL Injection prevention using prepared statements
-* Passwords never stored in plain text
-* Route protection for restricted pages
+* Secure user registration & login (`password_hash`, `password_verify`)
+* Role-based access (Buyer / Seller)
+* Session-based authentication with timeout
+* Route protection
+* SQL injection prevention (prepared statements)
 
 ---
 
-## 🧱 Database Design
+## 🧱 Database
 
-Core tables:
-
-* `users` (buyer/seller roles)
-* `products`
-* `orders`
-* `order_items`
-* `categories`
-
-Relational design ensures:
-
-* Data integrity (foreign keys)
-* Scalability for future features
+* `users`, `products`, `orders`, `order_items`, `categories`
+* Relational design with foreign keys
 
 ---
 
-## 📂 Project Structure
+## 📂 Structure
 
-```
+```plaintext
 local_marketplace/
-│
 ├── config/
-│   └── db.php
-│
 ├── auth/
-│   ├── register.php
-│   ├── login.php
-│   └── logout.php
-│
 ├── public/
-│   ├── login.html
-│   └── register.html
-│
 ├── seller/
-│   └── dashboard.php
-│
 ├── buyer/
-│   └── home.php
+├── uploads/
 ```
 
 ---
 
-## 🔄 Current Progress
+## ✅ Completed
 
-✔ Database schema designed
-✔ User registration system implemented
-✔ Secure login system with sessions
-✔ Role-based redirection
-✔ Route protection implemented
-✔ Logout functionality completed
+* Authentication system (login/register/logout)
+* Role-based redirection & route protection
+* Seller dashboard
+* Add product with image upload
+* View products (seller side)
+* Edit & delete products
+* Buyer marketplace page
+* Modern product card UI with images
+* Seller name display in buyer view
 
 ---
 
-## 🚧 Upcoming Features
+## 🚧 Upcoming
 
-* Product listing (seller dashboard)
-* Buyer storefront UI
-* Add to cart system
-* Order management system
+* Product details page
+* Add to cart
+* Order system
 * Admin panel
-* Security enhancements (XSS, CSRF protection)
+* Advanced security (XSS, CSRF)
 
 ---
 
-## 🧠 Learning Outcomes
+## ⚙️ Setup
 
-* Secure backend development using PHP
-* Authentication & session handling
-* Database normalization & relationships
-* Real-world application architecture
-* Git & GitHub workflow
-
----
-
-## ⚙️ Setup Instructions
-
-1. Clone the repository
-2. Move project to `htdocs` (XAMPP) or `www` (WAMP)
+1. Clone repository
+2. Move to `htdocs`
 3. Start Apache & MySQL
-4. Import database schema in phpMyAdmin
+4. Import database
 5. Open:
 
-   ```
-   http://localhost/local_marketplace/public/register.html
-   ```
+```plaintext
+http://localhost/local_marketplace/public/register.html
+```
 
 ---
 
 ## 📌 Author
 
-Developed as a full-stack project to demonstrate practical web development and security skills.
+Built as a full-stack project focusing on secure backend development and real-world application design.
