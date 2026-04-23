@@ -43,6 +43,9 @@ $result = $stmt->get_result();
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
 
+            // 🔥 MAKE CARD CLICKABLE
+            echo "<a href='product_details.php?id=" . $row["id"] . "' class='card-link'>";
+
             echo "<div class='market-card'>";
 
             // IMAGE
@@ -63,6 +66,8 @@ $result = $stmt->get_result();
             echo "</div>";
 
             echo "</div>";
+
+            echo "</a>"; // 🔥 CLOSE LINK
         }
     } else {
         echo "<p>No products available</p>";
