@@ -323,3 +323,58 @@ body {
   margin-top: 15px;
   color: #777;
 }
+
+/* Button */
+.add-to-cart-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.cart-item img {
+  border-radius: 5px;
+}
+
+.cart-item input {
+  width: 60px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.remove-btn {
+  display: inline-block;
+  margin-top: 5px;
+  color: red;
+  text-decoration: none;
+}
+
+.update-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

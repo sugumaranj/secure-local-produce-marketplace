@@ -3,7 +3,7 @@ $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "local_marketplace";
-$port = 4306;
+$port = 4308;
 
 $conn = new mysqli($host, $user, $pass, $db, $port);
 
