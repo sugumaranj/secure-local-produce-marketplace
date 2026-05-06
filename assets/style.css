@@ -378,3 +378,176 @@ body {
   border: none;
   cursor: pointer;
 }
+.order-card {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.market-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.market-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form input {
+  padding: 10px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-form button,
+.market-btn {
+  padding: 10px 15px;
+  border: none;
+  background: #1f7a1f;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.market-btn:hover,
+.search-form button:hover {
+  background: #145214;
+}
+
+.orders-container {
+  padding: 40px;
+}
+
+.orders-title {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.modern-order-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s;
+}
+
+.modern-order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-image img {
+  width: 180px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.order-details {
+  flex: 1;
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.order-top h3 {
+  color: #1f7a1f;
+  font-size: 28px;
+}
+
+.status-badge {
+  background: #1f7a1f;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.order-id,
+.order-date,
+.order-qty {
+  color: #666;
+  margin: 8px 0;
+}
+
+.order-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.order-total {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .modern-order-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-image img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .order-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+.buyer-navbar {
+  background: #145214;
+  padding: 15px 40px;
+
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.buyer-navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.buyer-navbar a:hover {
+  color: #c7ffc7;
+}
+
+.active-nav {
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
