@@ -1,49 +1,83 @@
 <?php
 session_start();
+
 require_once("../config/db.php");
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = trim($_POST["email"]);
     $password = $_POST["password"];
 
-    if(empty($email) || empty($password)){
+    /* VALIDATION */
+
+    if (empty($email) || empty($password)) {
+
         die("All fields are required");
     }
 
-    $stmt = $conn->prepare("SELECT id,name,password, role FROM users WHERE email = ? ");
-    $stmt->bind_param("s",$email);
+    /* FETCH USER */
+
+    $stmt = $conn->prepare("
+        SELECT id, name, password, role
+        FROM users
+        WHERE email = ?
+    ");
+
+    $stmt->bind_param("s", $email);
+
     $stmt->execute();
 
     $result = $stmt->get_result();
-    if($result->num_rows === 1){
+
+    if ($result->num_rows === 1) {
+
         $user = $result->fetch_assoc();
-        if(password_verify($password,$user["password"])){
+
+        /* PASSWORD VERIFY */
+
+        if (password_verify($password, $user["password"])) {
+
+            /* SECURE SESSION */
+
+            session_regenerate_id(true);
+
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["name"] = $user["name"];
             $_SESSION["role"] = $user["role"];
             $_SESSION["last_activity"] = time();
 
-            echo "Login successful";
-            if($_SESSION["role"]=="buyer"){
-                session_regenerate_id(true);
-                header("Location:../buyer/home.php");
+            /* ROLE REDIRECTION */
+
+            if ($user["role"] == "admin") {
+
+                header("Location: ../admin/dashboard.php");
                 exit();
             }
-            else if($_SESSION["role"]=="seller"){
-                session_regenerate_id(true);
-                header("Location:../seller/dashboard.php");
+
+            else if ($user["role"] == "buyer") {
+
+                header("Location: ../buyer/home.php");
                 exit();
             }
-        }else{
-            echo "Invalid password or username";
+
+            else if ($user["role"] == "seller") {
+
+                header("Location: ../seller/dashboard.php");
+                exit();
+            }
+
+        } else {
+
+            echo "Invalid password";
         }
-    }else{
+
+    } else {
+
         echo "User not found";
     }
 
     $stmt->close();
-    $conn->close();
 
+    $conn->close();
 }
 ?>

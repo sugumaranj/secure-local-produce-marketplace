@@ -98,15 +98,17 @@ if ($result->num_rows > 0) {
             <!-- DETAILS -->
             <div class="order-details">
 
-                <div class="order-top">
-
-                    <h3>
+               <div class="order-top">
+                     <h3>
                         <?php echo htmlspecialchars($row["product_name"]); ?>
                     </h3>
 
-                    <span class="status-badge">
-                        <?php echo htmlspecialchars($row["status"]); ?>
-                    </span>
+                <span class="
+                            status-badge
+                 <?php echo strtolower($row['status']); ?>
+                ">
+                <?php echo htmlspecialchars($row["status"]); ?>
+                </span>
 
                 </div>
 

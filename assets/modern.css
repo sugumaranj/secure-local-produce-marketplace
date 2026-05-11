@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #00c896;
+  --secondary: #00e0ff;
+
+  --glass: rgba(255, 255, 255, 0.08);
+
+  --border: rgba(255, 255, 255, 0.15);
+
+  --text: #ffffff;
+
+  --muted: #cfd8dc;
+
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: linear-gradient(135deg, #07121d, #102737, #17384f);
+
+  color: var(--text);
+
+  position: relative;
+}
+
+/* BACKGROUND EFFECT */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(0, 255, 170, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0, 170, 255, 0.18),
+      transparent 30%
+    );
+
+  z-index: -1;
+}
+
+/* HEADER */
+
+.header {
+  width: 92%;
+
+  margin: 25px auto;
+
+  padding: 22px 40px;
+
+  border-radius: 24px;
+
+  background: var(--glass);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid var(--border);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  box-shadow: var(--shadow);
+}
+
+.header h2 {
+  font-size: 32px;
+
+  font-weight: 700;
+}
+
+.nav-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.header a {
+  text-decoration: none;
+
+  color: white;
+
+  padding: 12px 22px;
+
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.header a:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+  transform: translateY(-2px);
+}
+
+/* NAVBAR */
+
+.nav-menu,
+.buyer-navbar,
+.seller-navbar,
+.admin-navbar {
+  width: 92%;
+
+  margin: 0 auto 30px;
+
+  padding: 18px 30px;
+
+  border-radius: 20px;
+
+  background: var(--glass);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid var(--border);
+
+  display: flex;
+
+  gap: 30px;
+
+  align-items: center;
+
+  box-shadow: var(--shadow);
+}
+
+.nav-menu a,
+.buyer-navbar a,
+.seller-navbar a,
+.admin-navbar a {
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 500;
+
+  padding-bottom: 6px;
+
+  transition: 0.3s;
+}
+
+.nav-menu a:hover,
+.buyer-navbar a:hover,
+.seller-navbar a:hover,
+.admin-navbar a:hover {
+  color: #00ffd0;
+}
+
+.active-nav {
+  border-bottom: 2px solid #00ffd0;
+}
+
+/* CONTAINER */
+
+.container,
+.orders-container,
+.admin-container {
+  width: 92%;
+
+  margin: auto;
+
+  padding: 20px 0 60px;
+}
+
+/* CARDS */
+
+.card,
+.market-card,
+.feature-card,
+.admin-card,
+.modern-order-card {
+  background: var(--glass);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.35s;
+}
+
+.card:hover,
+.market-card:hover,
+.feature-card:hover,
+.admin-card:hover,
+.modern-order-card:hover {
+  transform: translateY(-8px);
+}
+
+/* DASHBOARD */
+
+.cards,
+.admin-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 30px;
+
+  margin-top: 30px;
+}
+
+.card,
+.admin-card {
+  padding: 35px;
+}
+
+.admin-card h2 {
+  font-size: 48px;
+
+  margin-bottom: 10px;
+}
+
+/* PRODUCT GRID */
+
+.market-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 30px;
+
+  margin-top: 30px;
+}
+
+.market-card {
+  overflow: hidden;
+}
+
+.market-img {
+  height: 240px;
+
+  overflow: hidden;
+}
+
+.market-img img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 0.5s;
+}
+
+.market-card:hover img {
+  transform: scale(1.08);
+}
+
+.market-body {
+  padding: 22px;
+}
+
+.market-body h4 {
+  font-size: 26px;
+
+  margin-bottom: 10px;
+
+  color: #00ffd0;
+}
+
+.market-desc {
+  color: var(--muted);
+
+  line-height: 1.7;
+
+  margin-bottom: 18px;
+}
+
+.market-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.market-price {
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+.market-seller {
+  color: #cfd8dc;
+}
+
+/* PRODUCT PAGE */
+
+.product-page {
+  width: 92%;
+
+  margin: 40px auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 40px;
+}
+
+.product-image img {
+  width: 100%;
+
+  border-radius: 28px;
+
+  box-shadow: var(--shadow);
+}
+
+.product-info {
+  background: var(--glass);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid var(--border);
+
+  border-radius: 28px;
+
+  padding: 40px;
+}
+
+.product-info h2 {
+  font-size: 42px;
+
+  margin-bottom: 20px;
+
+  color: #00ffd0;
+}
+
+.price {
+  font-size: 34px;
+
+  font-weight: 700;
+
+  margin: 20px 0;
+}
+
+.desc {
+  line-height: 1.8;
+
+  color: var(--muted);
+}
+
+/* BUTTONS */
+
+button,
+.market-btn,
+.add-to-cart-btn,
+.update-btn {
+  border: none;
+
+  cursor: pointer;
+
+  padding: 14px 28px;
+
+  border-radius: 14px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: white;
+
+  background: linear-gradient(135deg, #00c896, #00e0ff);
+
+  transition: 0.3s;
+}
+
+button:hover,
+.market-btn:hover,
+.add-to-cart-btn:hover,
+.update-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 25px rgba(0, 224, 255, 0.35);
+}
+
+/* TABLES */
+
+.admin-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: var(--glass);
+
+  backdrop-filter: blur(18px);
+}
+
+.admin-table th {
+  background: rgba(255, 255, 255, 0.12);
+
+  color: white;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* FOOTER */
+
+.footer {
+  width: 92%;
+
+  margin: 40px auto;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  background: var(--glass);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .product-page {
+    grid-template-columns: 1fr;
+  }
+
+  .header,
+  .nav-menu,
+  .buyer-navbar,
+  .seller-navbar,
+  .admin-navbar {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+}

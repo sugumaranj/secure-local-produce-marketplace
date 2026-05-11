@@ -2,94 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Local Produce Marketplace</title>
 
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-      }
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css" />
 
-      /* Header */
-      .header {
-        background: #2e7d32;
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-      /* Hero Section */
-      .hero {
-        text-align: center;
-        padding: 50px 20px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
-      }
-
-      .hero p {
-        font-size: 18px;
-        color: #555;
-      }
-
-      /* Buttons */
-      .buttons {
-        margin-top: 30px;
-      }
-
-      .buttons a {
-        text-decoration: none;
-        padding: 12px 20px;
-        margin: 10px;
-        background: #2e7d32;
-        color: white;
-        border-radius: 5px;
-        display: inline-block;
-      }
-
-      .buttons a:hover {
-        background: #1b5e20;
-      }
-
-      /* Footer */
-      .footer {
-        background: #000;
-        color: white;
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <!-- Header -->
-    <div class="header">
-      <h2>🌿 Local Produce Marketplace</h2>
-    </div>
+    <!-- BACKGROUND -->
+    <div class="bg-overlay"></div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <h1>Buy Fresh. Sell Local.</h1>
-      <p>
-        Connecting farmers and buyers directly for fresh agricultural products.
-      </p>
+    <!-- NAVBAR -->
 
-      <div class="buttons">
-        <a href="public/login.html">Login</a>
-        <a href="public/register.html">Register</a>
+    <nav class="modern-navbar">
+      <div class="logo">🌿 Local Produce Marketplace</div>
+
+      <div class="nav-buttons">
+        <a href="public/login.html"> Login </a>
+
+        <a href="public/register.html" class="register-btn"> Register </a>
       </div>
-    </div>
+    </nav>
 
-    <!-- Footer -->
-    <div class="footer">
-      <p>© 2026 Local Marketplace</p>
-    </div>
+    <!-- HERO -->
+
+    <section class="hero-section">
+      <div class="glass-container">
+        <h1>Buy Fresh. Sell Local.</h1>
+
+        <p>
+          Connecting farmers and buyers directly with secure and modern
+          agricultural commerce.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="public/login.html"> Get Started </a>
+
+          <a href="public/register.html" class="secondary-btn">
+            Create Account
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features-section">
+      <div class="feature-card">
+        <h2>🔒 Secure Platform</h2>
+
+        <p>
+          Secure authentication, role-based access, and protected transactions.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h2>🛒 Smart Marketplace</h2>
+
+        <p>
+          Buy and sell fresh agricultural products with modern order management.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h2>🚚 Fast Workflow</h2>
+
+        <p>Smooth checkout, cart management, and seller order tracking.</p>
+      </div>
+    </section>
   </body>
 </html>
